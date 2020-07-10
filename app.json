@@ -1,31 +1,12 @@
 {
+  "name": "kmspapp",
+  "displayName": "kmspapp",
   "expo": {
-    "name": "Expo Uber",
-    "description": "uber clone with expo",
-    "scheme": "uberclone",
-    "slug": "uberclone",
-    "privacy": "public",
-    "version": "0.0.1",
-    "platforms": ["android", "ios"],
-    "githubUrl": "https://github.com/calebnance/expo-uber",
-    "orientation": "portrait",
-    "primaryColor": "#000000",
-    "icon": "src/assets/icon.png",
-    "splash": {
-      "backgroundColor": "#000000",
-      "image": "src/assets/splash.png",
-      "resizeMode": "contain"
-    },
-    "updates": {
-      "fallbackToCacheTimeout": 0
-    },
-    "assetBundlePatterns": ["**/*"],
-    "android": {
-      "versionCode": 1
-    },
-    "ios": {
-      "buildNumber": "0.0.1",
-      "supportsTablet": true
-    }
+    "name": "kmspapp",
+    "slug": "kmspapp",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
   }
 }

@@ -1,36 +1,20 @@
 import React from 'react';
-import { StatusBar } from 'react-native';
-import { AppLoading } from 'expo';
-import { func } from './src/constants';
+import { Button, View, Text } from 'react-native';
+import { createStackNavigator, createAppContainer } from 'react-navigation'; // Version can be specified in package.json
+import SplashScreen from 'react-native-splash-screen';
+import WelCome from "./js/pages/WelComePage";
+import StaticServerUtil from './js/util/StaticServerUtil'
 
-import Stack from './src/navigation/Stack';
 
 export default class App extends React.Component {
-  constructor(props) {
-    super(props);
 
-    this.state = {
-      isLoading: true
-    };
-  }
 
-  render() {
-    const { isLoading } = this.state;
-
-    if (isLoading) {
-      return (
-        <AppLoading
-          onFinish={() => this.setState({ isLoading: false })}
-          startAsync={func.loadAssetsAsync}
-        />
-      );
+    componentDidMount(){
+        SplashScreen.hide();
+        StaticServerUtil.start()
     }
 
-    return (
-      <React.Fragment>
-        <StatusBar barStyle="dark-content" />
-        <Stack />
-      </React.Fragment>
-    );
-  }
+    render() {
+        return <WelCome />;
+    }
 }
