@@ -9,7 +9,6 @@ import {
 } from 'react-native';
 import AvListSon from "./AvListSon";
 import Theme from "react-native-theming";
-import Orientation from 'react-native-orientation';
 import {FetchRequest} from "../../util/FetchRequest";
 
 // 取得屏幕的宽高Dimensions
@@ -44,11 +43,9 @@ export default class AvList extends Component {
     }
 
     componentWillMount() {
-       Orientation.lockToPortrait();
     }
 
     componentWillUnmount(){
-        Orientation.lockToPortrait();
     }
 
     getData( pageNo ) {

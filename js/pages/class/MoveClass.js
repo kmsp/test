@@ -15,7 +15,6 @@ import FastImage from 'react-native-fast-image';
 import Theme from "react-native-theming";
 import MoveClassDetail from './MoveClassDetail';
 import TagDetail from './TagDetail';
-import Orientation from 'react-native-orientation';
 import {FetchRequest} from "../../util/FetchRequest";
 
 
@@ -26,11 +25,9 @@ export default class MoveClass extends Component{
     componentWillMount(){
         this.getData();
         this.getLabelData();
-        Orientation.lockToPortrait();
     };
 
     componentWillUnmount() {
-       Orientation.lockToPortrait();
     }
 
     constructor(props){

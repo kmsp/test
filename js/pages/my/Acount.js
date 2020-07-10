@@ -17,7 +17,6 @@ import Icon from "react-native-vector-icons/AntDesign";
 import QRCode from 'react-native-qrcode';
 import Theme, {createThemedComponent} from "react-native-theming";
 import ViewShot, { captureScreen, captureRef } from "react-native-view-shot";
-import Orientation from 'react-native-orientation';
 
 const { width, height } = Dimensions.get('window');
 const MdSafeAreaView = createThemedComponent(SafeAreaView);
@@ -47,11 +46,9 @@ export default class Acount extends Component{
     }
 
     componentWillMount() {
-       Orientation.lockToPortrait();
 	}
 
     componentWillUnmount() {
-       Orientation.lockToPortrait();
 	}
 
     getAcount(){

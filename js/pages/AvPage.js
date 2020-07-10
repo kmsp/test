@@ -10,7 +10,6 @@ import AvHot from './av/AvHot';
 import JingXuanPage from './av/JingXuanPage';
 import {createThemedComponent} from "react-native-theming";
 import ViewShot, { captureScreen, captureRef } from "react-native-view-shot";
-import Orientation from 'react-native-orientation';
 import { queryRemind, writeRemind} from '../util/DButils'
 import NetInfo from "@react-native-community/netinfo";
 import {FetchRequest} from "../util/FetchRequest";
@@ -50,11 +49,9 @@ export default class AvPage extends Component{
     }
 
     componentWillMount() {
-       Orientation.lockToPortrait();
     }
 
     componentWillUnmount() {
-       Orientation.lockToPortrait();
     }
 
 

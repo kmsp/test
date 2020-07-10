@@ -9,7 +9,6 @@ import {
 } from 'react-native';
 import MoveListSon from "./MoveListSon";
 import Theme from "react-native-theming";
-import Orientation from 'react-native-orientation';
 import {FetchRequest} from "../../util/FetchRequest";
 
 
@@ -46,11 +45,9 @@ export default class MoveList extends Component {
     }
 
     componentWillMount() {
-       Orientation.lockToPortrait();
     }
 
     componentWillUnmount() {
-       Orientation.lockToPortrait();
     }
 
     getData( pageNo ) {

@@ -28,7 +28,6 @@ import FastImage from 'react-native-fast-image';
 import QRCode from "react-native-qrcode";
 import {FetchRequest} from "../../util/FetchRequest";
 import {DownloadVideo} from "../../video/DownloadVideo";
-import Orientation from 'react-native-orientation';
 
 const deviceInfo = {
     deviceWidth: Dimensions.get('window').width,
@@ -93,7 +92,6 @@ export default class MoveDetail extends Component{
 
     componentWillMount() {
         this.getDetail();
-        Orientation.lockToPortrait();
     }
 
     componentDidMount(){
@@ -102,7 +100,6 @@ export default class MoveDetail extends Component{
 
     componentWillUnmount(){
         pageNo=0;
-        Orientation.lockToPortrait();
     }
 
 
@@ -675,16 +672,8 @@ export default class MoveDetail extends Component{
                 fullscreen: true,
             })*/
         }
-        // Orientation.unlockAllOrientations();
     };
 
-    _onOrientationChanged = (isFullScreen) => {
-        if (isFullScreen) {
-            Orientation.lockToPortrait();
-        } else {
-            Orientation.lockToLandscapeLeft();
-        }
-    };
 
     render(){
         //第一次加载等待的view
@@ -711,7 +700,6 @@ export default class MoveDetail extends Component{
                         videoTitle={this.state.MovieDetail.title}
                         videoCover={placeholder.startsWith('http') ? placeholder : global.ActiveDomain+placeholder}
                         ad1={this.state.ad1[0]}
-                        onChangeOrientation={this._onOrientationChanged}
                         onTapBackButton={()=>this.props.navigation.goBack()}
                         onClickBuyVip={()=>this.props.navigation.navigate('VipShowPage')}
                         isShiKan={this.state.AllDate.shikan}

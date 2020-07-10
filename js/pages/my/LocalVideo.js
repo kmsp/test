@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import {SafeAreaView, StatusBar,View} from 'react-native';
 import Theme,{createThemedComponent} from "react-native-theming";
-import Orientation from "react-native-orientation";
 import RNFetchBlob from 'rn-fetch-blob';
 import VideoPlayer from "../../video/VideoPlayerlocal";
 import fs from 'react-native-fs'
@@ -64,16 +63,8 @@ export default class LocalVideo extends Component{
                 showHidden:true,
             })
         }
-        // Orientation.unlockAllOrientations();
-    };
+   };
 
-    _onOrientationChanged = (isFullScreen) => {
-        if (isFullScreen) {
-            Orientation.lockToPortrait();
-        } else {
-            Orientation.lockToLandscapeRight();
-        }
-    };
 
 
     render(){
@@ -90,7 +81,6 @@ export default class LocalVideo extends Component{
                             videoID={this.state.MovieDetail.id}
                             videoURL={playUrl}
                             videoTitle={this.state.MovieDetail.title}
-                            onChangeOrientation={this._onOrientationChanged}
                             onTapBackButton={()=>this.props.navigation.goBack()}
                         />
                     </View>

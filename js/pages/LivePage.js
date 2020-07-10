@@ -18,7 +18,6 @@ import Theme,{createThemedComponent} from "react-native-theming";
 import Icon from "react-native-vector-icons/FontAwesome5";
 import FastImage from 'react-native-fast-image';
 import {FetchRequest} from "../util/FetchRequest";
-import Orientation from 'react-native-orientation';
 import NoNetworkContainer from '../common/NoNetwork';
 
 
@@ -55,12 +54,10 @@ export default class LivePage extends Component{
     }
 
     componentWillMount() {
-       Orientation.lockToPortrait();
     }
 
     componentWillUnmount(){
         pageNo = 0;
-        Orientation.lockToPortrait();
     }
 
     getData( pageNo ) {

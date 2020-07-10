@@ -11,7 +11,6 @@ import AvItem from "../../common/AvItem";
 import ScrollableTabView from "react-native-scrollable-tab-view";
 import TabBar from "react-native-underline-tabbar";
 import Theme, {createThemedComponent} from "react-native-theming";
-import Orientation from 'react-native-orientation';
 
 const { width, height } = Dimensions.get('window');
 
@@ -41,11 +40,9 @@ export default class AvClassDetail extends Component{
     }
 
     componentWillMount() {
-       Orientation.lockToPortrait();
     }
 
     componentWillUnmount() {
-       Orientation.lockToPortrait();
     }
 
     render(){

@@ -9,7 +9,6 @@ import MoveClass from "./class/MoveClass";
 import ScrollableTabView from "react-native-scrollable-tab-view";
 import TabBar from "react-native-underline-tabbar";
 import { createThemedComponent } from 'react-native-theming';
-import Orientation from 'react-native-orientation';
 
 const { width, height } = Dimensions.get('window');
 const MdSafeAreaView = createThemedComponent(SafeAreaView);
@@ -18,11 +17,9 @@ const MdTabBar = createThemedComponent(TabBar,['underlineColor']);
 
 export default class ClassPage extends Component{
     componentWillMount() {
-       Orientation.lockToPortrait();
     }
 
     componentWillUnmount() {
-       Orientation.lockToPortrait();
     }
 
     render(){

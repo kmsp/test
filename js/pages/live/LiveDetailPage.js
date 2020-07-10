@@ -15,7 +15,6 @@ import Theme, {createThemedComponent} from "react-native-theming";
 import FastImage from 'react-native-fast-image';
 import IdleTimerManager from 'react-native-idle-timer';
 import KSYVideo from 'react-native-ksyvideo';
-import Orientation from 'react-native-orientation';
 import {FetchRequest} from "../../util/FetchRequest";
 
 
@@ -48,7 +47,6 @@ export default class LiveDetailPage extends Component{
 
     componentWillMount(){
         //强制竖屏
-        Orientation.lockToPortrait();
         //直播会员判断
         if (global.UserVip !== 0){
             this.lookTime && clearInterval(this.lookTime);
@@ -113,7 +111,6 @@ export default class LiveDetailPage extends Component{
 
     componentWillUnmount() {
         //强制竖屏
-        Orientation.lockToPortrait();
         //清除计时器
         this.lookTime && clearInterval(this.lookTime);
         //屏幕常亮关闭

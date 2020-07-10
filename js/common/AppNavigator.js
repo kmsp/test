@@ -4,7 +4,6 @@
 import React, {Component} from 'react';
 import { StyleSheet, Image } from 'react-native';
 import { createBottomTabNavigator, createStackNavigator, createAppContainer } from 'react-navigation';
-import Orientation from 'react-native-orientation';
 import AvPage from "../pages/AvPage";
 import MovePage from "../pages/MovePage";
 import ClassPage from "../pages/ClassPage";
@@ -230,11 +229,9 @@ import NoNetwork from "./NoNetwork"
                         inactiveTintColor: '#AAA', // 文字和图片未选中颜色
                         style: {
                             backgroundColor: screenProps.BackgroundColor, // TabBar 背景色
-                            height: Orientation.getInitialOrientation() === 'PORTRAIT' ? 44 : 0,
                             borderTopColor: '#ccc',
                             borderTopWidth: 1,
                             padding: 2,
-                            opacity: Orientation.getInitialOrientation() === 'PORTRAIT' ? 1 : 0,
                         },
                         labelStyle: {
                             // fontSize: 14, // 文字大小

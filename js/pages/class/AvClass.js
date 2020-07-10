@@ -15,7 +15,6 @@ import {
 import FastImage from 'react-native-fast-image';
 import AvClassDetail from "../class/AvClassDetail";
 import Theme from "react-native-theming";
-import Orientation from 'react-native-orientation';
 import {FetchRequest} from "../../util/FetchRequest";
 
 
@@ -24,11 +23,9 @@ const { width, height } = Dimensions.get('window');
 export default class AvClass extends Component{
     componentWillMount(){
         this.getData();
-        Orientation.lockToPortrait();
     };
 
     componentWillUnmount() {
-       Orientation.lockToPortrait();
     }
 
     constructor(props){

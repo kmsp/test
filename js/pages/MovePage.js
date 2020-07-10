@@ -8,7 +8,6 @@ import TabBar from "react-native-underline-tabbar";
 import MoveList from "./move/MoveList";
 import MoveSearch from "./move/MoveSearch"
 import {createThemedComponent} from "react-native-theming";
-import Orientation from 'react-native-orientation';
 
 const { width, height } = Dimensions.get('window');
 const nav_width = 60;
@@ -31,11 +30,9 @@ export default class AvPage extends Component{
     }
 
     componentWillMount() {
-       Orientation.lockToPortrait();
     }
 
     componentWillUnmount() {
-       Orientation.lockToPortrait();
     }
 
     getNavDate(){

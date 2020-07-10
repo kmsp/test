@@ -15,7 +15,6 @@ import FastImage from 'react-native-fast-image';
 import Theme ,{createThemedComponent} from "react-native-theming";
 import DeviceStorage from "../../util/DeviceStorage";
 import {FetchRequest} from "../../util/FetchRequest";
-import Orientation from 'react-native-orientation';
 
 let pageNo = 0;//当前第几页
 let itemNum = 8;    //一页显示数量
@@ -50,7 +49,6 @@ export default class MoveSearch extends Component{
     }
 
     componentWillMount(){
-        Orientation.lockToPortrait();
         this._getHotKey();
         DeviceStorage.get('SearchKeys').then((result) => {
             if (result !== null && result !== '') {
@@ -62,7 +60,6 @@ export default class MoveSearch extends Component{
     }
 
     componentWillUnmount(){
-        Orientation.lockToPortrait();
         clearInterval(this.searchTime)
     }
 

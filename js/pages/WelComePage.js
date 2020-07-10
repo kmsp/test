@@ -23,7 +23,6 @@ import FastImage from 'react-native-fast-image';
 import OpeninstallModule from 'openinstall-react-native'
 import {FetchRequest} from "../util/FetchRequest";
 import MD5 from "react-native-md5";
-import Orientation from 'react-native-orientation';
 import NetInfo from "@react-native-community/netinfo";
 
 
@@ -60,7 +59,6 @@ export default class WelCome extends Component{
     }
 
     componentWillMount(){
-        Orientation.lockToPortrait();
         //检查设备锁
 
         DeviceStorage.get('LockPass').then((result) => {
@@ -105,7 +103,6 @@ export default class WelCome extends Component{
     }
 
     componentWillUnmount(){
-        Orientation.lockToPortrait();
         global.key = 'eb@evl6XKEKtTxX%';
         clearInterval(this.IndexAdTime);
         //跳出页面，清空临时数据

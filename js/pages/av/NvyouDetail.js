@@ -11,7 +11,6 @@ import Icon from "react-native-vector-icons/AntDesign";
 import FastImage from 'react-native-fast-image';
 import AvItem from "../../common/AvItem";
 import Theme, {createThemedComponent} from "react-native-theming";
-import Orientation from 'react-native-orientation';
 import {FetchRequest} from "../../util/FetchRequest";
 
 const MdSafeAreaView = createThemedComponent(SafeAreaView);
@@ -35,11 +34,9 @@ export default class NvyouDetail extends Component{
     }
 
     componentWillMount() {
-       Orientation.lockToPortrait();
     }
 
     componentWillUnmount() {
-       Orientation.lockToPortrait();
     }
 
     //获取演员信息

@@ -12,7 +12,6 @@ import Icon from "react-native-vector-icons/AntDesign";
 import Toast, {DURATION} from 'react-native-easy-toast';
 import Theme, {createThemedComponent} from "react-native-theming";
 import {FetchRequest} from "../../util/FetchRequest";
-import Orientation from 'react-native-orientation';
 
 const MdSafeAreaView = createThemedComponent(SafeAreaView);
 const MdTouchableOpacity = createThemedComponent(TouchableOpacity);
@@ -43,8 +42,6 @@ export default class ChangeSafeCodePage extends Component{
     }
 
     componentWillMount() {
-        Orientation.lockToPortrait();
-
     }
 
 

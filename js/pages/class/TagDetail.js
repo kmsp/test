@@ -13,7 +13,6 @@ import AvItem from "../../common/AvItem";
 import TabBar from "react-native-underline-tabbar";
 import {createThemedComponent} from "react-native-theming";
 import Theme from "react-native-theming";
-import Orientation from 'react-native-orientation';
 
 const { width, height } = Dimensions.get('window');
 const MdSafeAreaView = createThemedComponent(SafeAreaView);
@@ -34,7 +33,6 @@ export default class TagDetail extends Component{
     }
 
     componentWillMount(){
-        Orientation.lockToPortrait();
         if(this.props.navigation.getParam('navBarTitle')){
             this.setState({
                 navbar_title:this.props.navigation.getParam('navBarTitle'),
@@ -43,7 +41,6 @@ export default class TagDetail extends Component{
     }
 
     componentWillUnmount() {
-       Orientation.lockToPortrait();
     }
 
     render(){

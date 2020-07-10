@@ -10,7 +10,6 @@ import {
 } from 'react-native';
 import Icon from "react-native-vector-icons/AntDesign";
 import Theme, {createThemedComponent} from "react-native-theming";
-import Orientation from 'react-native-orientation';
 
 //获取设备的宽度和高度
 var {
@@ -39,8 +38,6 @@ export default class Kefu extends Component{
     }
 
     componentWillMount(){
-        Orientation.lockToPortrait();
-        //alert(global.url);
 
     }
 

@@ -16,7 +16,6 @@ import {
 } from 'react-native';
 import PropTypes from 'prop-types';
 import Video from 'react-native-video';
-import Orientation from "react-native-orientation";
 import SystemSetting from 'react-native-system-setting';
 import FastImage from 'react-native-fast-image';
 import {FetchRequest} from "../util/FetchRequest";
@@ -25,7 +24,6 @@ import {FetchRequest} from "../util/FetchRequest";
 export default class VideoPlayer extends React.Component {
 
     static propTypes = {
-        onChangeOrientation: PropTypes.func,
         onTapBackButton: PropTypes.func,
         onClickBuyVip:PropTypes.func
     };
@@ -698,15 +696,10 @@ export default class VideoPlayer extends React.Component {
         }
     };
 
-    // 点击展开全屏或收起全屏
-    _onTapSwitchButton = () => {
-        this.props.onChangeOrientation && this.props.onChangeOrientation(this.state.isFullScreen);
-    };
 
     // 点击返回键
     _onTapBackButton = () => {
         if (this.state.isFullScreen) {
-            Orientation.lockToPortrait();
         } else {
             this.props.onTapBackButton && this.props.onTapBackButton();
         }

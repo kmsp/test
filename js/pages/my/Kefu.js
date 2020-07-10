@@ -10,14 +10,13 @@ import {
 } from 'react-native';
 import Icon from "react-native-vector-icons/AntDesign";
 import Theme, {createThemedComponent} from "react-native-theming";
-import Orientation from 'react-native-orientation';
 
 //获取设备的宽度和高度
 var {
     height: deviceHeight,
     width: deviceWidth
 } = Dimensions.get('window');
- 
+
  const MdSafeAreaView = createThemedComponent(SafeAreaView);
 //默认应用的容器组件
 export default class Kefu extends Component{
@@ -39,8 +38,6 @@ export default class Kefu extends Component{
     }
 
     componentWillMount(){
-        Orientation.lockToPortrait();
-        //alert(global.url);
 
     }
 
@@ -67,7 +64,7 @@ export default class Kefu extends Component{
         );
     }
 }
- 
+
 //样式定义
 const styles = StyleSheet.create({
     container: {

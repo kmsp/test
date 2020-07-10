@@ -25,7 +25,6 @@ import Theme, {createThemedComponent} from 'react-native-theming';
 import Icon from "react-native-vector-icons/FontAwesome";
 import {FetchRequest} from "../util/FetchRequest";
 import Color from "../common/Color";
-import Orientation from 'react-native-orientation';
 import NoNetworkContainer from '../common/NoNetwork';
 
 const MdSafeAreaView = createThemedComponent(SafeAreaView);
@@ -67,7 +66,6 @@ export default class MyPage extends Component{
     }
 
     componentWillMount(){
-        Orientation.lockToPortrait();
         //如果开启了密码
         DeviceStorage.get('LockPass').then((result) => {
             if (result !== null) {
@@ -85,7 +83,6 @@ export default class MyPage extends Component{
 
     componentWillUnmount(){
         this.props.navigation.removeListener('didFocus', () => {this.getUserInfo();this._getVipInfo();})
-        Orientation.lockToPortrait();
     }
 
     getUserInfo(){

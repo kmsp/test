@@ -12,7 +12,6 @@ import MoveItem from "../../common/MoveItem";
 import TabBar from "react-native-underline-tabbar";
 import {createThemedComponent} from "react-native-theming";
 import Theme from "react-native-theming";
-import Orientation from 'react-native-orientation';
 
 const { width, height } = Dimensions.get('window');
 
@@ -42,11 +41,9 @@ export default class MoveClassDetail extends Component{
     }
 
     componentWillMount() {
-       Orientation.lockToPortrait();
     }
 
     componentWillUnmount() {
-       Orientation.lockToPortrait();
     }
 
     render(){
